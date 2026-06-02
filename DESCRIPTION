@@ -3,7 +3,7 @@ Type: Package
 Title: WFP Bootswatch Theme for Shiny
 Version: 0.1.0
 Authors@R: c(
-    person("WFP", "Design System", role = c("aut", "cre"))
+    person("Brice Baem BAGOA", "VAM Officer", role = c("aut", "cre"))
 )
 Description: A complete Bootswatch theme based on the World Food Programme (WFP)
     UI Kit design system for use in Shiny applications. Provides WFP-branded
@@ -20,5 +20,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: knitr
-URL: https://github.com/wfp/wfp.bootswatch
-BugReports: https://github.com/wfp/wfp.bootswatch/issues
+URL: https://github.com/bbbagoa/wfp.bootswatch
+BugReports: https://github.com/bbbagoa/wfp.bootswatch/issues
