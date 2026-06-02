@@ -258,7 +258,7 @@ ui <- page_navbar(
       tags$ins("ins"),
       " for inserted text."
     ),
-    p("For variables, use ", var("x"), " = ", var("y"), " + ", var("z")),
+    p("For variables, use ", em("x"), " = ", em("y"), " + ", em("z")),
     p("Keyboard input: ", tags$kbd("Ctrl"), " + ", tags$kbd("S")),
 
     hr(),
@@ -778,10 +778,10 @@ ui <- page_navbar(
               tags$div(
                 class = "d-flex w-100 justify-content-between",
                 h5(class = "mb-1", "Active Item"),
-                small("3 days ago")
+                tags$small("3 days ago")
               ),
               p(class = "mb-1", "This is the currently selected list item."),
-              small("Additional details here.")
+              tags$small("Additional details here.")
             ),
             tags$a(
               href = "#",
@@ -789,10 +789,10 @@ ui <- page_navbar(
               tags$div(
                 class = "d-flex w-100 justify-content-between",
                 h5(class = "mb-1", "Second Item"),
-                small(class = "text-muted", "1 week ago")
+                tags$small(class = "text-muted", "1 week ago")
               ),
               p(class = "mb-1", "This is another list item."),
-              small(class = "text-muted", "More details.")
+              tags$small(class = "text-muted", "More details.")
             ),
             tags$a(
               href = "#",
@@ -800,10 +800,10 @@ ui <- page_navbar(
               tags$div(
                 class = "d-flex w-100 justify-content-between",
                 h5(class = "mb-1", "Third Item"),
-                small(class = "text-muted", "2 weeks ago")
+                tags$small(class = "text-muted", "2 weeks ago")
               ),
               p(class = "mb-1", "Yet another list item."),
-              small(class = "text-muted", "Final details.")
+              tags$small(class = "text-muted", "Final details.")
             )
           )
         )
