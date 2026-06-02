@@ -250,16 +250,16 @@ ui <- page_navbar(
     hr(),
 
     h5("Inline Text Elements"),
-    p("You can use ", mark("mark"), " to highlight text."),
+    p("You can use ", tags$mark("mark"), " to highlight text."),
     p(
       "Use ",
-      del("del"),
+      tags$del("del"),
       " for deleted text and ",
-      ins("ins"),
+      tags$ins("ins"),
       " for inserted text."
     ),
     p("For variables, use ", var("x"), " = ", var("y"), " + ", var("z")),
-    p("Keyboard input: ", kbd("Ctrl"), " + ", kbd("S")),
+    p("Keyboard input: ", tags$kbd("Ctrl"), " + ", tags$kbd("S")),
 
     hr(),
 
