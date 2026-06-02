@@ -239,12 +239,12 @@ ui <- page_navbar(
 
     hr(),
 
-    blockquote(
+    tags$blockquote(
       class = "blockquote",
       p(
         "This is a blockquote. It features a left border accent in WFP Blue for visual distinction."
       ),
-      footer(class = "blockquote-footer", "Source attribution")
+      tags$footer(class = "blockquote-footer", "Source attribution")
     ),
 
     hr(),
