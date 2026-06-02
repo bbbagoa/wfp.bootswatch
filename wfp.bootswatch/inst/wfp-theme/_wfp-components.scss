@@ -1,0 +1,1072 @@
+// ============================================================================
+// WFP Component Styling
+// ============================================================================
+// Custom component styles following WFP UI Kit design patterns.
+// These styles extend Bootstrap 5 components with WFP-specific
+// visual treatments while maintaining full Bootstrap compatibility.
+// ============================================================================
+
+// --- Buttons ---
+// WFP buttons follow a clean, flat design with subtle interactions
+.btn {
+  font-weight: $btn-font-weight;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  transition: all 0.15s ease-in-out;
+  position: relative;
+  overflow: hidden;
+
+  // Ripple effect placeholder
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s, height 0.3s;
+  }
+
+  &:active::after {
+    width: 200%;
+    height: 200%;
+  }
+
+  // Primary button
+  &-primary {
+    background-color: $wfp-blue;
+    border-color: $wfp-blue;
+    color: $wfp-white;
+
+    &:hover {
+      background-color: $wfp-blue-dark;
+      border-color: $wfp-blue-dark;
+      color: $wfp-white;
+    }
+
+    &:focus,
+    &.focus {
+      box-shadow: 0 0 0 0.2rem rgba($wfp-blue, 0.25);
+    }
+
+    &:active,
+    &.active {
+      background-color: $wfp-blue-dark;
+      border-color: $wfp-blue-dark;
+    }
+
+    &:disabled,
+    &.disabled {
+      background-color: tint-color($wfp-blue, 50%);
+      border-color: tint-color($wfp-blue, 50%);
+    }
+  }
+
+  // Secondary button
+  &-secondary {
+    background-color: $wfp-navy;
+    border-color: $wfp-navy;
+    color: $wfp-white;
+
+    &:hover {
+      background-color: $wfp-navy-dark;
+      border-color: $wfp-navy-dark;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($wfp-navy, 0.25);
+    }
+  }
+
+  // Success button
+  &-success {
+    background-color: $wfp-dark-green;
+    border-color: $wfp-dark-green;
+
+    &:hover {
+      background-color: $wfp-dark-green-dark;
+      border-color: $wfp-dark-green-dark;
+    }
+  }
+
+  // Danger button
+  &-danger {
+    background-color: $wfp-red;
+    border-color: $wfp-red;
+
+    &:hover {
+      background-color: $wfp-red-dark;
+      border-color: $wfp-red-dark;
+    }
+  }
+
+  // Warning button (dark text for contrast)
+  &-warning {
+    background-color: $wfp-yellow;
+    border-color: $wfp-yellow;
+    color: $wfp-dark-text-01;
+
+    &:hover {
+      background-color: $wfp-yellow-dark;
+      border-color: $wfp-yellow-dark;
+      color: $wfp-dark-text-01;
+    }
+  }
+
+  // Info button
+  &-info {
+    background-color: $wfp-aqua;
+    border-color: $wfp-aqua;
+    color: $wfp-dark-text-01;
+
+    &:hover {
+      background-color: $wfp-aqua-dark;
+      border-color: $wfp-aqua-dark;
+      color: $wfp-dark-text-01;
+    }
+  }
+
+  // Outline variants
+  &-outline-primary {
+    color: $wfp-blue;
+    border-color: $wfp-blue;
+
+    &:hover {
+      background-color: $wfp-blue;
+      border-color: $wfp-blue;
+      color: $wfp-white;
+    }
+  }
+
+  &-outline-secondary {
+    color: $wfp-navy;
+    border-color: $wfp-navy;
+
+    &:hover {
+      background-color: $wfp-navy;
+      border-color: $wfp-navy;
+      color: $wfp-white;
+    }
+  }
+
+  // Size variants
+  &-lg {
+    font-size: $font-size-lg;
+    padding: $btn-padding-y-lg $btn-padding-x-lg;
+  }
+
+  &-sm {
+    font-size: $font-size-sm;
+    padding: $btn-padding-y-sm $btn-padding-x-sm;
+  }
+
+  // Link button
+  &-link {
+    color: $wfp-primary;
+    text-decoration: underline;
+    font-weight: $font-weight-normal;
+
+    &:hover {
+      color: $wfp-blue-dark;
+    }
+  }
+}
+
+// --- Cards ---
+.card {
+  border: 1px solid $wfp-gray-1;
+  border-radius: $border-radius-lg;
+  background-color: $wfp-white;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:hover {
+    border-color: shade-color($wfp-gray-1, 10%);
+  }
+
+  // Card header
+  .card-header {
+    background-color: $wfp-gray-3;
+    border-bottom: 1px solid $wfp-gray-1;
+    font-weight: $font-weight-semibold;
+    color: $wfp-dark-text-01;
+    padding: $card-cap-padding-y $card-cap-padding-x;
+  }
+
+  // Card footer
+  .card-footer {
+    background-color: $wfp-gray-3;
+    border-top: 1px solid $wfp-gray-1;
+    padding: $card-cap-padding-y $card-cap-padding-x;
+  }
+
+  // Card title
+  .card-title {
+    font-weight: $font-weight-semibold;
+    color: $wfp-dark-text-01;
+    margin-bottom: 0.75rem;
+  }
+
+  // Card subtitle
+  .card-subtitle {
+    color: $wfp-dark-text-03;
+    font-size: $font-size-sm;
+    margin-top: -0.375rem;
+    margin-bottom: 0.75rem;
+  }
+
+  // Card text
+  .card-text {
+    color: $wfp-dark-text-02;
+  }
+
+  // Card links
+  .card-link {
+    font-weight: $font-weight-medium;
+  }
+
+  // Card image
+  .card-img-top {
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+  }
+
+  .card-img-bottom {
+    border-bottom-left-radius: $border-radius-lg;
+    border-bottom-right-radius: $border-radius-lg;
+  }
+}
+
+// Card variants
+@each $color, $value in $theme-colors {
+  .card-#{$color} {
+    border-color: tint-color($value, 70%);
+    border-left-width: 4px;
+    border-left-color: $value;
+
+    .card-header {
+      background-color: tint-color($value, 90%);
+      color: shade-color($value, 30%);
+      border-bottom-color: tint-color($value, 70%);
+    }
+  }
+}
+
+// --- Navbar ---
+.navbar {
+  padding: $navbar-padding-y $navbar-padding-x;
+
+  // Brand styling
+  .navbar-brand {
+    font-weight: $font-weight-bold;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  // Dark navbar (WFP primary)
+  &.navbar-dark {
+    background-color: $wfp-blue !important;
+
+    .navbar-brand {
+      color: $wfp-white;
+
+      &:hover, &:focus {
+        color: $wfp-white;
+      }
+    }
+
+    .navbar-nav {
+      .nav-link {
+        color: rgba($wfp-white, 0.85);
+        font-weight: $font-weight-medium;
+        padding: 0.5rem 1rem;
+        border-radius: $border-radius-sm;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+        &:hover, &:focus {
+          color: $wfp-white;
+          background-color: rgba($wfp-white, 0.1);
+        }
+
+        &.active {
+          color: $wfp-white;
+          background-color: rgba($wfp-white, 0.15);
+        }
+
+        &.disabled {
+          color: rgba($wfp-white, 0.4);
+        }
+      }
+    }
+
+    .navbar-toggler {
+      border-color: rgba($wfp-white, 0.3);
+      padding: 0.375rem 0.75rem;
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($wfp-white, 0.25);
+      }
+    }
+  }
+
+  // Light navbar
+  &.navbar-light {
+    background-color: $wfp-white !important;
+    border-bottom: 1px solid $wfp-gray-1;
+
+    .navbar-brand {
+      color: $wfp-dark-text-01;
+
+      &:hover, &:focus {
+        color: $wfp-primary;
+      }
+    }
+
+    .navbar-nav {
+      .nav-link {
+        color: $wfp-dark-text-02;
+        font-weight: $font-weight-medium;
+        padding: 0.5rem 1rem;
+        border-radius: $border-radius-sm;
+
+        &:hover, &:focus {
+          color: $wfp-dark-text-01;
+          background-color: $wfp-gray-3;
+        }
+
+        &.active {
+          color: $wfp-primary;
+          background-color: rgba($wfp-primary, 0.06);
+        }
+
+        &.disabled {
+          color: $wfp-dark-text-03;
+        }
+      }
+    }
+  }
+}
+
+// --- Forms ---
+.form-control {
+  border: 1px solid $wfp-gray-1;
+  border-radius: $input-border-radius;
+  padding: $input-padding-y $input-padding-x;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $wfp-dark-text-01;
+  background-color: $wfp-white;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+  &:focus {
+    border-color: tint-color($wfp-primary, 50%);
+    box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.15);
+    background-color: $wfp-white;
+    color: $wfp-dark-text-01;
+  }
+
+  &::placeholder {
+    color: $wfp-dark-text-03;
+    opacity: 0.7;
+  }
+
+  &:disabled,
+  &[readonly] {
+    background-color: $wfp-gray-2;
+    opacity: 0.7;
+  }
+
+  // Valid state
+  &.is-valid {
+    border-color: $wfp-dark-green;
+
+    &:focus {
+      border-color: $wfp-dark-green;
+      box-shadow: 0 0 0 0.2rem rgba($wfp-dark-green, 0.15);
+    }
+  }
+
+  // Invalid state
+  &.is-invalid {
+    border-color: $wfp-red;
+
+    &:focus {
+      border-color: $wfp-red;
+      box-shadow: 0 0 0 0.2rem rgba($wfp-red, 0.15);
+    }
+  }
+}
+
+// Form labels
+.form-label {
+  font-weight: $form-label-font-weight;
+  color: $form-label-color;
+  margin-bottom: 0.375rem;
+  font-size: $font-size-sm;
+}
+
+// Form check
+.form-check-input {
+  border-color: $wfp-gray-1;
+  width: 1.125em;
+  height: 1.125em;
+  margin-top: 0.15em;
+
+  &:checked {
+    background-color: $wfp-primary;
+    border-color: $wfp-primary;
+  }
+
+  &:focus {
+    border-color: tint-color($wfp-primary, 50%);
+    box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.15);
+  }
+
+  &:checked[type="checkbox"] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+  }
+}
+
+.form-check-label {
+  color: $wfp-dark-text-02;
+  font-size: $font-size-base;
+}
+
+// Input groups
+.input-group {
+  .input-group-text {
+    background-color: $wfp-gray-3;
+    border-color: $wfp-gray-1;
+    color: $wfp-dark-text-02;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-base;
+  }
+
+  .form-control {
+    border-left-width: 0;
+
+    &:first-child {
+      border-left-width: 1px;
+    }
+  }
+}
+
+// Select
+.form-select {
+  border-color: $wfp-gray-1;
+  border-radius: $input-border-radius;
+  color: $wfp-dark-text-01;
+
+  &:focus {
+    border-color: tint-color($wfp-primary, 50%);
+    box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.15);
+  }
+}
+
+// Range
+.form-range {
+  &::-webkit-slider-thumb {
+    background-color: $wfp-primary;
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.25);
+    }
+  }
+
+  &::-moz-range-thumb {
+    background-color: $wfp-primary;
+  }
+}
+
+// --- Alerts ---
+.alert {
+  border: 1px solid transparent;
+  border-radius: $alert-border-radius;
+  padding: $alert-padding-y $alert-padding-x;
+
+  // Left accent border
+  border-left-width: 4px;
+
+  .alert-heading {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-base;
+    margin-bottom: 0.25rem;
+  }
+
+  .alert-link {
+    font-weight: $font-weight-semibold;
+  }
+
+  // Close button
+  .btn-close {
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+// Alert variants with left accent
+.alert-primary {
+  background-color: tint-color($wfp-blue, 92%);
+  border-color: tint-color($wfp-blue, 70%);
+  border-left-color: $wfp-blue;
+  color: shade-color($wfp-blue, 40%);
+
+  .alert-link {
+    color: shade-color($wfp-blue, 50%);
+  }
+}
+
+.alert-secondary {
+  background-color: tint-color($wfp-navy, 92%);
+  border-color: tint-color($wfp-navy, 70%);
+  border-left-color: $wfp-navy;
+  color: shade-color($wfp-navy, 20%);
+}
+
+.alert-success {
+  background-color: tint-color($wfp-dark-green, 92%);
+  border-color: tint-color($wfp-dark-green, 70%);
+  border-left-color: $wfp-dark-green;
+  color: shade-color($wfp-dark-green, 30%);
+}
+
+.alert-danger {
+  background-color: tint-color($wfp-red, 92%);
+  border-color: tint-color($wfp-red, 70%);
+  border-left-color: $wfp-red;
+  color: shade-color($wfp-red, 30%);
+}
+
+.alert-warning {
+  background-color: tint-color($wfp-yellow, 85%);
+  border-color: tint-color($wfp-yellow, 50%);
+  border-left-color: $wfp-yellow;
+  color: shade-color($wfp-yellow, 50%);
+}
+
+.alert-info {
+  background-color: tint-color($wfp-aqua, 90%);
+  border-color: tint-color($wfp-aqua, 60%);
+  border-left-color: $wfp-aqua;
+  color: shade-color($wfp-aqua, 40%);
+}
+
+.alert-light {
+  background-color: $wfp-white;
+  border-color: $wfp-gray-1;
+  border-left-color: $wfp-dark-text-03;
+  color: $wfp-dark-text-02;
+}
+
+.alert-dark {
+  background-color: shade-color($wfp-dark-text-01, 20%);
+  border-color: $wfp-dark-text-01;
+  border-left-color: $wfp-dark-text-03;
+  color: $wfp-white;
+}
+
+// --- Badges ---
+.badge {
+  font-weight: $badge-font-weight;
+  letter-spacing: 0.02em;
+  padding: $badge-padding-y $badge-padding-x;
+
+  // Rounded pill variant
+  &.rounded-pill {
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+  }
+}
+
+// --- Tables ---
+.table {
+  color: $wfp-dark-text-02;
+  border-color: $wfp-gray-1;
+
+  // Header
+  thead {
+    th {
+      background-color: $wfp-gray-3;
+      color: $wfp-dark-text-01;
+      font-weight: $font-weight-semibold;
+      font-size: $font-size-sm;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom-width: 2px;
+      border-bottom-color: $wfp-gray-1;
+      padding: $table-cell-padding-y $table-cell-padding-x;
+    }
+  }
+
+  // Body cells
+  tbody {
+    td {
+      padding: $table-cell-padding-y $table-cell-padding-x;
+      vertical-align: middle;
+    }
+
+    tr {
+      transition: background-color 0.1s ease-in-out;
+
+      &:hover {
+        background-color: rgba($wfp-primary, 0.03);
+      }
+    }
+  }
+
+  // Striped
+  &.table-striped {
+    > tbody > tr:nth-of-type(odd) > * {
+      background-color: $wfp-gray-3;
+    }
+  }
+
+  // Hover
+  &.table-hover {
+    > tbody > tr:hover > * {
+      background-color: rgba($wfp-primary, 0.04);
+    }
+  }
+
+  // Bordered
+  &.table-bordered {
+    border: 1px solid $wfp-gray-1;
+
+    th, td {
+      border: 1px solid $wfp-gray-1;
+    }
+  }
+
+  // Smaller variant
+  &.table-sm {
+    th, td {
+      padding: $table-cell-padding-y-sm $table-cell-padding-x-sm;
+    }
+  }
+}
+
+// --- Pagination ---
+.pagination {
+  .page-item {
+    .page-link {
+      color: $wfp-primary;
+      border-color: $wfp-gray-1;
+      font-weight: $font-weight-medium;
+      padding: 0.5rem 0.875rem;
+      transition: all 0.15s ease-in-out;
+
+      &:hover {
+        background-color: $wfp-gray-3;
+        border-color: $wfp-gray-1;
+        color: $wfp-blue-dark;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.15);
+      }
+    }
+
+    &.active .page-link {
+      background-color: $wfp-primary;
+      border-color: $wfp-primary;
+      color: $wfp-white;
+      font-weight: $font-weight-semibold;
+    }
+
+    &.disabled .page-link {
+      color: $wfp-dark-text-03;
+      background-color: $wfp-gray-2;
+      border-color: $wfp-gray-1;
+    }
+
+    // First/last page arrows
+    &:first-child .page-link {
+      border-top-left-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+    }
+
+    &:last-child .page-link {
+      border-top-right-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+}
+
+// --- Progress ---
+.progress {
+  background-color: $wfp-gray-2;
+  border-radius: $border-radius-pill;
+  height: $progress-height;
+
+  .progress-bar {
+    background-color: $wfp-primary;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    line-height: $progress-height;
+    transition: width 0.3s ease-in-out;
+  }
+}
+
+// --- List Groups ---
+.list-group {
+  border-radius: $border-radius;
+
+  .list-group-item {
+    border-color: $wfp-gray-1;
+    color: $wfp-dark-text-02;
+    padding: 0.875rem 1.25rem;
+    transition: background-color 0.1s ease-in-out;
+
+    &:first-child {
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    &:last-child {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+
+    &:hover {
+      background-color: $wfp-gray-3;
+    }
+
+    &.active {
+      background-color: $wfp-primary;
+      border-color: $wfp-primary;
+      color: $wfp-white;
+      font-weight: $font-weight-medium;
+    }
+
+    // Action items
+    &.list-group-item-action {
+      &:active {
+        background-color: $wfp-gray-2;
+      }
+    }
+  }
+
+  // Flush variant
+  &.list-group-flush {
+    .list-group-item {
+      border-left: 0;
+      border-right: 0;
+
+      &:first-child {
+        border-top: 0;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+// --- Dropdowns ---
+.dropdown-menu {
+  border: 1px solid $wfp-gray-1;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 0.5rem 1rem rgba($wfp-dark-text-01, 0.08);
+  padding: $dropdown-padding-y 0;
+
+  .dropdown-item {
+    padding: 0.5rem 1.25rem;
+    color: $wfp-dark-text-02;
+    font-weight: $font-weight-normal;
+    transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
+
+    &:hover, &:focus {
+      background-color: $wfp-gray-3;
+      color: $wfp-dark-text-01;
+    }
+
+    &.active {
+      background-color: $wfp-primary;
+      color: $wfp-white;
+      font-weight: $font-weight-medium;
+    }
+
+    &.disabled {
+      color: $wfp-dark-text-03;
+    }
+  }
+
+  .dropdown-divider {
+    border-top-color: $wfp-gray-1;
+    margin: $dropdown-padding-y 0;
+  }
+
+  .dropdown-header {
+    color: $wfp-dark-text-03;
+    font-size: $font-size-sm;
+    font-weight: $font-weight-semibold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.5rem 1.25rem;
+  }
+}
+
+// Dropdown toggle button
+.dropdown-toggle {
+  &::after {
+    margin-left: 0.4em;
+    vertical-align: 0.15em;
+  }
+}
+
+// --- Modals ---
+.modal-content {
+  border: 1px solid $wfp-gray-1;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 1rem 3rem rgba($wfp-dark-text-01, 0.12);
+
+  .modal-header {
+    border-bottom-color: $wfp-gray-1;
+    padding: 1rem 1.5rem;
+
+    .modal-title {
+      font-weight: $font-weight-semibold;
+      font-size: $h5-font-size;
+      color: $wfp-dark-text-01;
+    }
+
+    .btn-close {
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+    color: $wfp-dark-text-02;
+  }
+
+  .modal-footer {
+    border-top-color: $wfp-gray-1;
+    padding: 1rem 1.5rem;
+  }
+}
+
+// --- Tabs ---
+.nav-tabs {
+  border-bottom-color: $wfp-gray-1;
+
+  .nav-link {
+    color: $wfp-dark-text-02;
+    font-weight: $font-weight-medium;
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+
+    &:hover {
+      color: $wfp-dark-text-01;
+      border-color: transparent;
+      border-bottom-color: $wfp-gray-1;
+    }
+
+    &:focus {
+      box-shadow: none;
+    }
+
+    &.active {
+      color: $wfp-primary;
+      background-color: transparent;
+      border-bottom-color: $wfp-primary;
+      font-weight: $font-weight-semibold;
+    }
+
+    &.disabled {
+      color: $wfp-dark-text-03;
+    }
+  }
+}
+
+// Pills
+.nav-pills {
+  .nav-link {
+    color: $wfp-dark-text-02;
+    font-weight: $font-weight-medium;
+    padding: 0.5rem 1rem;
+    border-radius: $border-radius;
+
+    &:hover {
+      color: $wfp-dark-text-01;
+      background-color: $wfp-gray-3;
+    }
+
+    &.active {
+      background-color: $wfp-primary;
+      color: $wfp-white;
+      font-weight: $font-weight-semibold;
+    }
+  }
+}
+
+// --- Accordions ---
+.accordion {
+  .accordion-item {
+    border-color: $wfp-gray-1;
+
+    &:first-of-type {
+      border-top-left-radius: $border-radius;
+      border-top-right-radius: $border-radius;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+  }
+
+  .accordion-button {
+    padding: 1rem 1.25rem;
+    font-weight: $font-weight-medium;
+    color: $wfp-dark-text-01;
+
+    &:not(.collapsed) {
+      background-color: rgba($wfp-primary, 0.04);
+      color: $wfp-primary;
+      font-weight: $font-weight-semibold;
+      box-shadow: inset 0 -1px 0 $wfp-gray-1;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.15);
+      border-color: tint-color($wfp-primary, 50%);
+    }
+
+    &::after {
+      width: 1rem;
+      height: 1rem;
+      background-size: 1rem;
+    }
+  }
+
+  .accordion-body {
+    padding: 1rem 1.25rem;
+    color: $wfp-dark-text-02;
+  }
+}
+
+// --- Tooltips ---
+.tooltip {
+  .tooltip-inner {
+    border-radius: $border-radius-sm;
+    font-size: $font-size-sm;
+    padding: 0.5rem 0.75rem;
+  }
+}
+
+// --- Popovers ---
+.popover {
+  border-color: $wfp-gray-1;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 0.5rem 1rem rgba($wfp-dark-text-01, 0.08);
+
+  .popover-header {
+    background-color: $wfp-gray-3;
+    border-bottom-color: $wfp-gray-1;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-base;
+    padding: 0.75rem 1rem;
+    border-top-left-radius: $border-radius-lg;
+    border-top-right-radius: $border-radius-lg;
+  }
+
+  .popover-body {
+    padding: 0.75rem 1rem;
+    color: $wfp-dark-text-02;
+  }
+}
+
+// --- Spinners ---
+.spinner-border {
+  &.text-primary {
+    border-right-color: transparent;
+  }
+}
+
+// --- Toasts ---
+.toast {
+  border: 1px solid $wfp-gray-1;
+  border-radius: $border-radius-lg;
+  box-shadow: 0 0.5rem 1rem rgba($wfp-dark-text-01, 0.08);
+
+  .toast-header {
+    background-color: $wfp-gray-3;
+    border-bottom-color: $wfp-gray-1;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    color: $wfp-dark-text-01;
+    padding: 0.625rem 1rem;
+
+    .btn-close {
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .toast-body {
+    padding: 1rem;
+    color: $wfp-dark-text-02;
+  }
+}
+
+// --- Offcanvas ---
+.offcanvas {
+  background-color: $wfp-white;
+
+  .offcanvas-header {
+    border-bottom: 1px solid $wfp-gray-1;
+    padding: 1rem 1.25rem;
+
+    .offcanvas-title {
+      font-weight: $font-weight-semibold;
+      font-size: $h5-font-size;
+    }
+  }
+
+  .offcanvas-body {
+    padding: 1.25rem;
+  }
+}
+
+// --- Breadcrumbs ---
+.breadcrumb {
+  font-size: $font-size-sm;
+
+  .breadcrumb-item {
+    + .breadcrumb-item::before {
+      color: $wfp-dark-text-03;
+    }
+
+    a {
+      color: $wfp-primary;
+      text-decoration: none;
+      font-weight: $font-weight-medium;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &.active {
+      color: $wfp-dark-text-03;
+      font-weight: $font-weight-normal;
+    }
+  }
+}

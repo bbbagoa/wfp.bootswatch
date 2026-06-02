@@ -1,0 +1,456 @@
+// ============================================================================
+// WFP Custom Utilities and Additional Styles
+// ============================================================================
+// Additional utility classes and custom styles specific to the WFP design
+// system that extend beyond standard Bootstrap components.
+// ============================================================================
+
+// --- Background Colors (Extended) ---
+.bg-wfp-blue { background-color: $wfp-blue !important; }
+.bg-wfp-navy { background-color: $wfp-navy !important; }
+.bg-wfp-aqua { background-color: $wfp-aqua !important; }
+.bg-wfp-green { background-color: $wfp-dark-green !important; }
+.bg-wfp-lime { background-color: $wfp-lime !important; }
+.bg-wfp-yellow { background-color: $wfp-yellow !important; }
+.bg-wfp-ochre { background-color: $wfp-ochre !important; }
+.bg-wfp-orange { background-color: $wfp-orange !important; }
+.bg-wfp-red { background-color: $wfp-red !important; }
+.bg-wfp-dark-red { background-color: $wfp-dark-red !important; }
+.bg-wfp-magenta { background-color: $wfp-magenta !important; }
+.bg-wfp-gray-1 { background-color: $wfp-gray-1 !important; }
+.bg-wfp-gray-2 { background-color: $wfp-gray-2 !important; }
+.bg-wfp-gray-3 { background-color: $wfp-gray-3 !important; }
+
+// --- Text Colors (Extended) ---
+.text-wfp-blue { color: $wfp-blue !important; }
+.text-wfp-navy { color: $wfp-navy !important; }
+.text-wfp-aqua { color: $wfp-aqua !important; }
+.text-wfp-green { color: $wfp-dark-green !important; }
+.text-wfp-lime { color: $wfp-lime !important; }
+.text-wfp-yellow { color: $wfp-yellow !important; }
+.text-wfp-ochre { color: $wfp-ochre !important; }
+.text-wfp-orange { color: $wfp-orange !important; }
+.text-wfp-red { color: $wfp-red !important; }
+.text-wfp-dark-red { color: $wfp-dark-red !important; }
+.text-wfp-magenta { color: $wfp-magenta !important; }
+
+// Semantic text colors
+.text-dark-01 { color: $wfp-dark-text-01 !important; }
+.text-dark-02 { color: $wfp-dark-text-02 !important; }
+.text-dark-03 { color: $wfp-dark-text-03 !important; }
+
+// --- Border Colors (Extended) ---
+.border-wfp-blue { border-color: $wfp-blue !important; }
+.border-wfp-navy { border-color: $wfp-navy !important; }
+.border-wfp-aqua { border-color: $wfp-aqua !important; }
+.border-wfp-green { border-color: $wfp-dark-green !important; }
+.border-wfp-yellow { border-color: $wfp-yellow !important; }
+.border-wfp-red { border-color: $wfp-red !important; }
+
+// --- WFP Status Indicators ---
+// Small colored dots for status indication
+.status-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+
+  &.status-active {
+    background-color: $wfp-dark-green;
+    box-shadow: 0 0 0 2px tint-color($wfp-dark-green, 80%);
+  }
+
+  &.status-inactive {
+    background-color: $wfp-dark-text-03;
+  }
+
+  &.status-warning {
+    background-color: $wfp-yellow;
+    box-shadow: 0 0 0 2px tint-color($wfp-yellow, 80%);
+  }
+
+  &.status-danger {
+    background-color: $wfp-red;
+    box-shadow: 0 0 0 2px tint-color($wfp-red, 80%);
+  }
+
+  &.status-info {
+    background-color: $wfp-aqua;
+    box-shadow: 0 0 0 2px tint-color($wfp-aqua, 80%);
+  }
+}
+
+// --- WFP Section Divider ---
+// Styled horizontal rule with optional text
+.wfp-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 1.5rem 0;
+  color: $wfp-dark-text-03;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+
+  &::before,
+  &::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid $wfp-gray-1;
+  }
+
+  &::before {
+    margin-right: 1rem;
+  }
+
+  &::after {
+    margin-left: 1rem;
+  }
+}
+
+// --- WFP Hero Section ---
+// For prominent header/content areas
+.wfp-hero {
+  background-color: $wfp-blue;
+  color: $wfp-white;
+  padding: 3rem 2rem;
+  border-radius: $border-radius-lg;
+  margin-bottom: 2rem;
+
+  h1, h2, h3, .h1, .h2, .h3 {
+    color: $wfp-white;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: rgba($wfp-white, 0.9);
+    font-size: $font-size-lg;
+    max-width: 700px;
+  }
+
+  a {
+    color: $wfp-white;
+    text-decoration: underline;
+
+    &:hover {
+      color: $wfp-gray-3;
+    }
+  }
+
+  .btn {
+    margin-top: 0.5rem;
+  }
+}
+
+// --- WFP Content Box ---
+// Subtle container for content grouping
+.wfp-content-box {
+  background-color: $wfp-white;
+  border: 1px solid $wfp-gray-1;
+  border-radius: $border-radius-lg;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+
+  &.wfp-content-box-elevated {
+    box-shadow: 0 0.25rem 0.75rem rgba($wfp-dark-text-01, 0.06);
+  }
+
+  &.wfp-content-box-highlight {
+    border-left: 4px solid $wfp-primary;
+  }
+}
+
+// --- WFP Stat Card ---
+// For displaying key metrics/stats
+.wfp-stat {
+  text-align: center;
+  padding: 1.5rem;
+
+  .wfp-stat-value {
+    font-size: 2.5rem;
+    font-weight: $font-weight-bold;
+    color: $wfp-dark-text-01;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .wfp-stat-label {
+    font-size: $font-size-sm;
+    color: $wfp-dark-text-03;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .wfp-stat-change {
+    font-size: $font-size-sm;
+    font-weight: $font-weight-medium;
+    margin-top: 0.25rem;
+
+    &.positive {
+      color: $wfp-dark-green;
+    }
+
+    &.negative {
+      color: $wfp-red;
+    }
+  }
+
+  // Color variants
+  @each $name, $color in (
+    "primary": $wfp-blue,
+    "success": $wfp-dark-green,
+    "info": $wfp-aqua,
+    "warning": $wfp-yellow,
+    "danger": $wfp-red
+  ) {
+    &.wfp-stat-#{$name} {
+      .wfp-stat-value {
+        color: $color;
+      }
+    }
+  }
+}
+
+// --- WFP Sidebar ---
+// Styled sidebar navigation
+.wfp-sidebar {
+  background-color: $wfp-gray-3;
+  border-right: 1px solid $wfp-gray-1;
+  min-height: 100vh;
+  padding: 1.5rem 0;
+
+  .wfp-sidebar-header {
+    padding: 0 1.5rem 1rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid $wfp-gray-1;
+
+    h1, h2, h3, .h1, .h2, .h3 {
+      font-size: $font-size-lg;
+      margin-bottom: 0;
+    }
+  }
+
+  .nav {
+    flex-direction: column;
+
+    .nav-link {
+      padding: 0.625rem 1.5rem;
+      color: $wfp-dark-text-02;
+      font-weight: $font-weight-medium;
+      border-radius: 0;
+      border-left: 3px solid transparent;
+      transition: all 0.15s ease-in-out;
+
+      &:hover {
+        color: $wfp-dark-text-01;
+        background-color: rgba($wfp-primary, 0.04);
+      }
+
+      &.active {
+        color: $wfp-primary;
+        background-color: rgba($wfp-primary, 0.06);
+        border-left-color: $wfp-primary;
+        font-weight: $font-weight-semibold;
+      }
+
+      i, .nav-icon {
+        margin-right: 0.75rem;
+        width: 1.25rem;
+        text-align: center;
+        color: $wfp-dark-text-03;
+      }
+
+      &.active i,
+      &.active .nav-icon {
+        color: $wfp-primary;
+      }
+    }
+  }
+}
+
+// --- WFP Footer ---
+// Organization footer style
+.wfp-footer {
+  background-color: $wfp-navy;
+  color: rgba($wfp-white, 0.8);
+  padding: 2rem 0;
+  margin-top: auto;
+
+  a {
+    color: rgba($wfp-white, 0.9);
+    text-decoration: none;
+
+    &:hover {
+      color: $wfp-white;
+      text-decoration: underline;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    color: $wfp-white;
+    font-size: $font-size-base;
+    font-weight: $font-weight-semibold;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    color: rgba($wfp-white, 0.7);
+    font-size: $font-size-sm;
+  }
+
+  hr {
+    border-color: rgba($wfp-white, 0.15);
+    margin: 1.5rem 0;
+  }
+
+  .wfp-footer-bottom {
+    font-size: $font-size-sm;
+    color: rgba($wfp-white, 0.6);
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba($wfp-white, 0.15);
+  }
+}
+
+// --- WFP Empty State ---
+// For empty/placeholder content areas
+.wfp-empty-state {
+  text-align: center;
+  padding: 3rem 2rem;
+  color: $wfp-dark-text-03;
+
+  .wfp-empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: $wfp-gray-1;
+  }
+
+  h3, .h3 {
+    color: $wfp-dark-text-02;
+    font-size: $font-size-lg;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    color: $wfp-dark-text-03;
+    max-width: 400px;
+    margin: 0 auto 1rem;
+  }
+}
+
+// --- WFP Callout ---
+// Highlighted information boxes
+.wfp-callout {
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid $wfp-gray-1;
+  border-left-width: 4px;
+  border-radius: $border-radius;
+  background-color: $wfp-white;
+
+  .wfp-callout-title {
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-base;
+    margin-bottom: 0.5rem;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  // Variants
+  &.callout-primary {
+    border-left-color: $wfp-primary;
+    background-color: tint-color($wfp-primary, 95%);
+    .wfp-callout-title { color: shade-color($wfp-primary, 30%); }
+  }
+
+  &.callout-success {
+    border-left-color: $wfp-success;
+    background-color: tint-color($wfp-success, 95%);
+    .wfp-callout-title { color: shade-color($wfp-success, 20%); }
+  }
+
+  &.callout-info {
+    border-left-color: $wfp-info;
+    background-color: tint-color($wfp-info, 95%);
+    .wfp-callout-title { color: shade-color($wfp-info, 30%); }
+  }
+
+  &.callout-warning {
+    border-left-color: $wfp-warning;
+    background-color: tint-color($wfp-warning, 90%);
+    .wfp-callout-title { color: shade-color($wfp-warning, 40%); }
+  }
+
+  &.callout-danger {
+    border-left-color: $wfp-danger;
+    background-color: tint-color($wfp-danger, 95%);
+    .wfp-callout-title { color: shade-color($wfp-danger, 20%); }
+  }
+}
+
+// --- Focus Accessibility ---
+// Enhanced focus styles for keyboard navigation
+:focus-visible {
+  outline: 2px solid rgba($wfp-primary, 0.6);
+  outline-offset: 2px;
+}
+
+// Skip to main content link (accessibility)
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: $wfp-primary;
+  color: $wfp-white;
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  text-decoration: none;
+  font-weight: $font-weight-medium;
+  border-radius: 0 0 $border-radius 0;
+
+  &:focus {
+    top: 0;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba($wfp-primary, 0.4);
+  }
+}
+
+// --- Smooth Scrolling ---
+html {
+  scroll-behavior: smooth;
+}
+
+// --- Reduced Motion ---
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+// --- Print Styles ---
+@media print {
+  .wfp-sidebar,
+  .navbar,
+  .wfp-footer,
+  .btn,
+  .no-print {
+    display: none !important;
+  }
+
+  .wfp-content-box {
+    border: 1px solid #ccc;
+    break-inside: avoid;
+  }
+}

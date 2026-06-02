@@ -1,0 +1,1129 @@
+// ============================================================================
+// WFP Dark Mode
+// ============================================================================
+// Comprehensive dark mode styles for the WFP Bootswatch theme.
+// Activated via data-bs-theme="dark" on the html or body element.
+// Uses a deep navy-slate palette that complements WFP's brand colors.
+// ============================================================================
+
+// --- Dark Mode Color Palette ---
+$wfp-dark-bg:         #0d1b2a !default;
+$wfp-dark-bg-elevated:#162536 !default;
+$wfp-dark-bg-surface: #1b2e40 !default;
+$wfp-dark-border:     #2a3f54 !default;
+$wfp-dark-border-subtle: #22354a !default;
+$wfp-dark-text-primary: #e8ecf0 !default;
+$wfp-dark-text-secondary: #9fb0c0 !default;
+$wfp-dark-text-tertiary: #6b8399 !default;
+
+// --- Root dark mode variables ---
+[data-bs-theme="dark"] {
+  // Core
+  --wfp-dark-bg: #{$wfp-dark-bg};
+  --wfp-dark-bg-elevated: #{$wfp-dark-bg-elevated};
+  --wfp-dark-bg-surface: #{$wfp-dark-bg-surface};
+  --wfp-dark-border: #{$wfp-dark-border};
+  --wfp-dark-text: #{$wfp-dark-text-primary};
+  --wfp-dark-text-secondary: #{$wfp-dark-text-secondary};
+}
+
+// ============================================================================
+// DARK MODE: Global & Typography
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  // Body
+  body {
+    background-color: $wfp-dark-bg;
+    color: $wfp-dark-text-primary;
+  }
+
+  // Typography
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+    color: $wfp-dark-text-primary;
+  }
+
+  h6, .h6 {
+    color: $wfp-dark-text-secondary;
+  }
+
+  p {
+    color: $wfp-dark-text-secondary;
+
+    &.lead {
+      color: $wfp-dark-text-secondary;
+    }
+  }
+
+  .text-muted {
+    color: $wfp-dark-text-tertiary !important;
+  }
+
+  .text-dark-01 { color: $wfp-dark-text-primary !important; }
+  .text-dark-02 { color: $wfp-dark-text-secondary !important; }
+  .text-dark-03 { color: $wfp-dark-text-tertiary !important; }
+
+  // Links
+  a:not(.btn):not(.nav-link):not(.dropdown-item):not(.page-link):not(.list-group-item):not(.navbar-brand) {
+    color: $wfp-aqua-light;
+
+    &:hover {
+      color: $wfp-aqua;
+    }
+  }
+
+  // Horizontal rule
+  hr {
+    border-top-color: $wfp-dark-border;
+  }
+
+  // Code
+  code {
+    background-color: $wfp-dark-bg-surface;
+    color: $wfp-aqua-light;
+  }
+
+  pre {
+    background-color: $wfp-dark-bg-surface;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-primary;
+  }
+
+  // Blockquotes
+  blockquote, .blockquote {
+    border-left-color: $wfp-primary;
+    color: $wfp-dark-text-secondary;
+
+    .blockquote-footer {
+      color: $wfp-dark-text-tertiary;
+    }
+  }
+
+  // Mark/Highlight
+  mark, .mark {
+    background-color: rgba($wfp-yellow, 0.25);
+    color: $wfp-dark-text-primary;
+  }
+
+  // Selection
+  ::selection {
+    background-color: rgba($wfp-primary, 0.35);
+    color: $wfp-dark-text-primary;
+  }
+}
+
+// ============================================================================
+// DARK MODE: Cards
+// ============================================================================
+
+[data-bs-theme="dark"] .card {
+  background-color: $wfp-dark-bg-elevated;
+  border-color: $wfp-dark-border;
+
+  .card-header {
+    background-color: $wfp-dark-bg-surface;
+    border-bottom-color: $wfp-dark-border;
+    color: $wfp-dark-text-primary;
+  }
+
+  .card-footer {
+    background-color: $wfp-dark-bg-surface;
+    border-top-color: $wfp-dark-border;
+  }
+
+  .card-title {
+    color: $wfp-dark-text-primary;
+  }
+
+  .card-subtitle {
+    color: $wfp-dark-text-tertiary;
+  }
+
+  .card-text {
+    color: $wfp-dark-text-secondary;
+  }
+
+  // Card variants
+  @each $color, $value in $theme-colors {
+    &.card-#{$color} {
+      border-color: rgba($value, 0.3);
+      border-left-color: $value;
+
+      .card-header {
+        background-color: rgba($value, 0.12);
+        color: tint-color($value, 40%);
+        border-bottom-color: rgba($value, 0.2);
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Forms
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .form-control {
+    background-color: $wfp-dark-bg-surface;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-primary;
+
+    &:focus {
+      background-color: $wfp-dark-bg-surface;
+      border-color: $wfp-primary;
+      box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.2);
+      color: $wfp-dark-text-primary;
+    }
+
+    &::placeholder {
+      color: $wfp-dark-text-tertiary;
+    }
+
+    &:disabled,
+    &[readonly] {
+      background-color: rgba($wfp-dark-bg-surface, 0.6);
+    }
+
+    &.is-valid {
+      border-color: $wfp-dark-green-light;
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($wfp-dark-green, 0.2);
+      }
+    }
+
+    &.is-invalid {
+      border-color: $wfp-red-light;
+
+      &:focus {
+        box-shadow: 0 0 0 0.2rem rgba($wfp-red, 0.2);
+      }
+    }
+  }
+
+  .form-label {
+    color: $wfp-dark-text-secondary;
+  }
+
+  .form-text {
+    color: $wfp-dark-text-tertiary;
+  }
+
+  .form-check-input {
+    background-color: $wfp-dark-bg-surface;
+    border-color: $wfp-dark-border;
+
+    &:checked {
+      background-color: $wfp-primary;
+      border-color: $wfp-primary;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.2);
+    }
+  }
+
+  .form-check-label {
+    color: $wfp-dark-text-secondary;
+  }
+
+  .form-select {
+    background-color: $wfp-dark-bg-surface;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-primary;
+
+    &:focus {
+      border-color: $wfp-primary;
+      box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.2);
+    }
+  }
+
+  .input-group-text {
+    background-color: $wfp-dark-bg-surface;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-secondary;
+  }
+
+  .form-range {
+    &::-webkit-slider-runnable-track {
+      background-color: $wfp-dark-bg-surface;
+    }
+
+    &::-moz-range-track {
+      background-color: $wfp-dark-bg-surface;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Navbar
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .navbar {
+    &.navbar-light {
+      background-color: $wfp-dark-bg-elevated !important;
+      border-bottom-color: $wfp-dark-border;
+
+      .navbar-brand {
+        color: $wfp-dark-text-primary;
+
+        &:hover, &:focus {
+          color: $wfp-primary;
+        }
+      }
+
+      .navbar-nav {
+        .nav-link {
+          color: $wfp-dark-text-secondary;
+
+          &:hover, &:focus {
+            color: $wfp-dark-text-primary;
+            background-color: rgba($wfp-white, 0.05);
+          }
+
+          &.active {
+            color: $wfp-aqua-light;
+            background-color: rgba($wfp-primary, 0.12);
+          }
+
+          &.disabled {
+            color: $wfp-dark-text-tertiary;
+          }
+        }
+      }
+
+      .navbar-toggler {
+        border-color: $wfp-dark-border;
+        color: $wfp-dark-text-secondary;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Alerts
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .alert {
+    border-left-width: 4px;
+  }
+
+  .alert-primary {
+    background-color: rgba($wfp-blue, 0.12);
+    border-color: rgba($wfp-blue, 0.25);
+    border-left-color: $wfp-blue;
+    color: tint-color($wfp-blue, 50%);
+  }
+
+  .alert-secondary {
+    background-color: rgba($wfp-navy, 0.2);
+    border-color: rgba($wfp-navy, 0.35);
+    border-left-color: $wfp-navy-light;
+    color: tint-color($wfp-navy-light, 30%);
+  }
+
+  .alert-success {
+    background-color: rgba($wfp-dark-green, 0.12);
+    border-color: rgba($wfp-dark-green, 0.25);
+    border-left-color: $wfp-dark-green-light;
+    color: tint-color($wfp-dark-green-light, 30%);
+  }
+
+  .alert-danger {
+    background-color: rgba($wfp-red, 0.12);
+    border-color: rgba($wfp-red, 0.25);
+    border-left-color: $wfp-red-light;
+    color: tint-color($wfp-red-light, 30%);
+  }
+
+  .alert-warning {
+    background-color: rgba($wfp-yellow, 0.1);
+    border-color: rgba($wfp-yellow, 0.2);
+    border-left-color: $wfp-yellow;
+    color: tint-color($wfp-yellow, 30%);
+  }
+
+  .alert-info {
+    background-color: rgba($wfp-aqua, 0.1);
+    border-color: rgba($wfp-aqua, 0.2);
+    border-left-color: $wfp-aqua;
+    color: tint-color($wfp-aqua, 40%);
+  }
+
+  .alert-light {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+    border-left-color: $wfp-dark-text-tertiary;
+    color: $wfp-dark-text-secondary;
+  }
+
+  .alert-dark {
+    background-color: rgba($wfp-dark-text-01, 0.4);
+    border-color: $wfp-dark-border;
+    border-left-color: $wfp-dark-text-tertiary;
+    color: $wfp-dark-text-primary;
+  }
+}
+
+// ============================================================================
+// DARK MODE: Dropdowns
+// ============================================================================
+
+[data-bs-theme="dark"] .dropdown-menu {
+  background-color: $wfp-dark-bg-elevated;
+  border-color: $wfp-dark-border;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+
+  .dropdown-item {
+    color: $wfp-dark-text-secondary;
+
+    &:hover, &:focus {
+      background-color: $wfp-dark-bg-surface;
+      color: $wfp-dark-text-primary;
+    }
+
+    &.active {
+      background-color: $wfp-primary;
+      color: $wfp-white;
+    }
+
+    &.disabled {
+      color: $wfp-dark-text-tertiary;
+    }
+  }
+
+  .dropdown-divider {
+    border-top-color: $wfp-dark-border;
+  }
+
+  .dropdown-header {
+    color: $wfp-dark-text-tertiary;
+  }
+}
+
+// ============================================================================
+// DARK MODE: Modals
+// ============================================================================
+
+[data-bs-theme="dark"] .modal-content {
+  background-color: $wfp-dark-bg-elevated;
+  border-color: $wfp-dark-border;
+
+  .modal-header {
+    border-bottom-color: $wfp-dark-border;
+
+    .modal-title {
+      color: $wfp-dark-text-primary;
+    }
+
+    .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+      opacity: 0.4;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+
+  .modal-body {
+    color: $wfp-dark-text-secondary;
+  }
+
+  .modal-footer {
+    border-top-color: $wfp-dark-border;
+  }
+}
+
+[data-bs-theme="dark"] .modal-backdrop {
+  background-color: #000;
+  opacity: 0.7;
+}
+
+// ============================================================================
+// DARK MODE: Tables
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .table {
+    color: $wfp-dark-text-secondary;
+    border-color: $wfp-dark-border;
+
+    thead th {
+      background-color: $wfp-dark-bg-surface;
+      color: $wfp-dark-text-primary;
+      border-bottom-color: $wfp-dark-border;
+    }
+
+    tbody {
+      td {
+        border-color: $wfp-dark-border;
+      }
+
+      tr:hover {
+        background-color: rgba($wfp-primary, 0.06);
+      }
+    }
+
+    &.table-striped {
+      > tbody > tr:nth-of-type(odd) > * {
+        background-color: rgba($wfp-dark-bg-surface, 0.5);
+        color: $wfp-dark-text-secondary;
+      }
+    }
+
+    &.table-hover {
+      > tbody > tr:hover > * {
+        background-color: rgba($wfp-primary, 0.08);
+        color: $wfp-dark-text-primary;
+      }
+    }
+
+    &.table-bordered {
+      border-color: $wfp-dark-border;
+
+      th, td {
+        border-color: $wfp-dark-border;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Tabs & Navs
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .nav-tabs {
+    border-bottom-color: $wfp-dark-border;
+
+    .nav-link {
+      color: $wfp-dark-text-tertiary;
+
+      &:hover {
+        color: $wfp-dark-text-secondary;
+        border-bottom-color: $wfp-dark-border;
+      }
+
+      &.active {
+        color: $wfp-aqua-light;
+        border-bottom-color: $wfp-aqua;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .nav-pills {
+    .nav-link {
+      color: $wfp-dark-text-secondary;
+
+      &:hover {
+        background-color: $wfp-dark-bg-surface;
+        color: $wfp-dark-text-primary;
+      }
+
+      &.active {
+        background-color: $wfp-primary;
+        color: $wfp-white;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Pagination
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .pagination {
+    .page-item {
+      .page-link {
+        background-color: $wfp-dark-bg-elevated;
+        border-color: $wfp-dark-border;
+        color: $wfp-aqua-light;
+
+        &:hover {
+          background-color: $wfp-dark-bg-surface;
+          border-color: $wfp-dark-border;
+          color: $wfp-aqua;
+        }
+
+        &:focus {
+          box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.2);
+        }
+      }
+
+      &.active .page-link {
+        background-color: $wfp-primary;
+        border-color: $wfp-primary;
+        color: $wfp-white;
+      }
+
+      &.disabled .page-link {
+        background-color: rgba($wfp-dark-bg-elevated, 0.5);
+        border-color: $wfp-dark-border-subtle;
+        color: $wfp-dark-text-tertiary;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: List Groups
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .list-group {
+    .list-group-item {
+      background-color: $wfp-dark-bg-elevated;
+      border-color: $wfp-dark-border;
+      color: $wfp-dark-text-secondary;
+
+      &:hover {
+        background-color: $wfp-dark-bg-surface;
+      }
+
+      &.active {
+        background-color: $wfp-primary;
+        border-color: $wfp-primary;
+        color: $wfp-white;
+      }
+
+      &.disabled {
+        background-color: rgba($wfp-dark-bg-elevated, 0.5);
+        color: $wfp-dark-text-tertiary;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Accordions
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .accordion {
+    .accordion-item {
+      background-color: $wfp-dark-bg-elevated;
+      border-color: $wfp-dark-border;
+
+      &:first-of-type,
+      &:last-of-type {
+        .accordion-button {
+          border-radius: 0;
+        }
+      }
+    }
+
+    .accordion-button {
+      background-color: $wfp-dark-bg-elevated;
+      color: $wfp-dark-text-primary;
+
+      &:not(.collapsed) {
+        background-color: rgba($wfp-primary, 0.1);
+        color: $wfp-aqua-light;
+        box-shadow: inset 0 -1px 0 $wfp-dark-border;
+      }
+
+      &::after {
+        filter: invert(0.7);
+      }
+
+      &:not(.collapsed)::after {
+        filter: invert(0.5) sepia(1) saturate(3) hue-rotate(160deg);
+      }
+    }
+
+    .accordion-body {
+      color: $wfp-dark-text-secondary;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Progress
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .progress {
+    background-color: $wfp-dark-bg-surface;
+
+    .progress-bar {
+      color: $wfp-white;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Toasts
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .toast {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+
+    .toast-header {
+      background-color: $wfp-dark-bg-surface;
+      border-bottom-color: $wfp-dark-border;
+      color: $wfp-dark-text-primary;
+
+      .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+      }
+    }
+
+    .toast-body {
+      color: $wfp-dark-text-secondary;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Breadcrumbs
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .breadcrumb {
+    .breadcrumb-item {
+      + .breadcrumb-item::before {
+        color: $wfp-dark-text-tertiary;
+      }
+
+      a {
+        color: $wfp-aqua-light;
+
+        &:hover {
+          color: $wfp-aqua;
+        }
+      }
+
+      &.active {
+        color: $wfp-dark-text-tertiary;
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Popovers & Tooltips
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .popover {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+
+    .popover-header {
+      background-color: $wfp-dark-bg-surface;
+      border-bottom-color: $wfp-dark-border;
+      color: $wfp-dark-text-primary;
+    }
+
+    .popover-body {
+      color: $wfp-dark-text-secondary;
+    }
+
+    .popover-arrow {
+      &::before,
+      &::after {
+        border-color: $wfp-dark-bg-elevated;
+      }
+    }
+  }
+
+  .tooltip {
+    .tooltip-inner {
+      background-color: $wfp-dark-bg-surface;
+      color: $wfp-dark-text-primary;
+      border: 1px solid $wfp-dark-border;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Offcanvas
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .offcanvas {
+    background-color: $wfp-dark-bg-elevated;
+    color: $wfp-dark-text-secondary;
+
+    .offcanvas-header {
+      border-bottom-color: $wfp-dark-border;
+
+      .offcanvas-title {
+        color: $wfp-dark-text-primary;
+      }
+
+      .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+      }
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Spinners
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .spinner-border {
+    &.text-light {
+      color: $wfp-dark-text-secondary !important;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Close Buttons
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  .btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+    opacity: 0.4;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: WFP Custom Components
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  // WFP Hero
+  .wfp-hero {
+    background: linear-gradient(135deg, shade-color($wfp-blue, 30%) 0%, shade-color($wfp-navy, 15%) 100%);
+    color: $wfp-white;
+
+    h1, h2, h3, .h1, .h2, .h3, p, a {
+      color: $wfp-white;
+    }
+
+    a:hover {
+      color: $wfp-gray-3;
+    }
+  }
+
+  // WFP Content Box
+  .wfp-content-box {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+
+    &.wfp-content-box-elevated {
+      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  // WFP Stat
+  .wfp-stat {
+    .wfp-stat-value {
+      color: $wfp-dark-text-primary;
+    }
+
+    .wfp-stat-label {
+      color: $wfp-dark-text-tertiary;
+    }
+  }
+
+  // WFP Sidebar
+  .wfp-sidebar {
+    background-color: $wfp-dark-bg-elevated;
+    border-right-color: $wfp-dark-border;
+
+    .wfp-sidebar-header {
+      border-bottom-color: $wfp-dark-border;
+
+      h1, h2, h3, .h1, .h2, .h3 {
+        color: $wfp-dark-text-primary;
+      }
+    }
+
+    .nav .nav-link {
+      color: $wfp-dark-text-secondary;
+
+      &:hover {
+        color: $wfp-dark-text-primary;
+        background-color: rgba($wfp-primary, 0.08);
+      }
+
+      &.active {
+        color: $wfp-aqua-light;
+        background-color: rgba($wfp-primary, 0.15);
+        border-left-color: $wfp-primary;
+      }
+
+      i, .nav-icon {
+        color: $wfp-dark-text-tertiary;
+      }
+
+      &.active i,
+      &.active .nav-icon {
+        color: $wfp-aqua-light;
+      }
+    }
+  }
+
+  // WFP Footer
+  .wfp-footer {
+    background-color: shade-color($wfp-navy, 15%);
+  }
+
+  // WFP Empty State
+  .wfp-empty-state {
+    color: $wfp-dark-text-tertiary;
+
+    .wfp-empty-icon {
+      color: $wfp-dark-border;
+    }
+
+    h3, .h3 {
+      color: $wfp-dark-text-secondary;
+    }
+
+    p {
+      color: $wfp-dark-text-tertiary;
+    }
+  }
+
+  // WFP Callout
+  .wfp-callout {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+
+    &.callout-primary {
+      background-color: rgba($wfp-blue, 0.1);
+      border-color: rgba($wfp-blue, 0.2);
+      border-left-color: $wfp-blue;
+
+      .wfp-callout-title {
+        color: tint-color($wfp-blue, 50%);
+      }
+    }
+
+    &.callout-success {
+      background-color: rgba($wfp-dark-green, 0.1);
+      border-color: rgba($wfp-dark-green, 0.2);
+      border-left-color: $wfp-dark-green-light;
+
+      .wfp-callout-title {
+        color: tint-color($wfp-dark-green-light, 30%);
+      }
+    }
+
+    &.callout-info {
+      background-color: rgba($wfp-aqua, 0.08);
+      border-color: rgba($wfp-aqua, 0.18);
+      border-left-color: $wfp-aqua;
+
+      .wfp-callout-title {
+        color: tint-color($wfp-aqua, 40%);
+      }
+    }
+
+    &.callout-warning {
+      background-color: rgba($wfp-yellow, 0.08);
+      border-color: rgba($wfp-yellow, 0.15);
+      border-left-color: $wfp-yellow;
+
+      .wfp-callout-title {
+        color: tint-color($wfp-yellow, 25%);
+      }
+    }
+
+    &.callout-danger {
+      background-color: rgba($wfp-red, 0.1);
+      border-color: rgba($wfp-red, 0.2);
+      border-left-color: $wfp-red-light;
+
+      .wfp-callout-title {
+        color: tint-color($wfp-red-light, 25%);
+      }
+    }
+  }
+
+  // WFP Divider
+  .wfp-divider {
+    color: $wfp-dark-text-tertiary;
+
+    &::before,
+    &::after {
+      border-bottom-color: $wfp-dark-border;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: bslib Card Specific
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  // bslib value boxes and info cards
+  .bslib-card {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+  }
+
+  .bslib-value-box {
+    .value-box-area {
+      background-color: $wfp-dark-bg-elevated;
+    }
+  }
+
+  // Sidebar (bslib layout_sidebar)
+  .bslib-sidebar-layout {
+    > .sidebar {
+      background-color: $wfp-dark-bg-elevated;
+      border-color: $wfp-dark-border;
+    }
+  }
+
+  // Accordion panels (bslib)
+  .accordion-button {
+    background-color: $wfp-dark-bg-elevated;
+  }
+}
+
+// ============================================================================
+// DARK MODE: Shiny-specific Components
+// ============================================================================
+
+[data-bs-theme="dark"] {
+  // Shiny inputs general
+  .shiny-input-container {
+    color: $wfp-dark-text-secondary;
+  }
+
+  // Shiny notification
+  .shiny-notification {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-primary;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.35);
+  }
+
+  // Date picker dropdown
+  .datepicker {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-primary;
+
+    .datepicker-days td,
+    .datepicker-days th {
+      color: $wfp-dark-text-secondary;
+    }
+
+    .datepicker-switch {
+      color: $wfp-dark-text-primary;
+    }
+
+    table tr td span:hover,
+    table tr td.day:hover {
+      background-color: $wfp-dark-bg-surface;
+    }
+
+    table tr td.active,
+    table tr td.active:hover {
+      background-color: $wfp-primary;
+      color: $wfp-white;
+    }
+  }
+
+  // Selectize
+  .selectize-input {
+    background-color: $wfp-dark-bg-surface;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-primary;
+
+    input {
+      color: $wfp-dark-text-primary;
+    }
+
+    &.focus {
+      border-color: $wfp-primary;
+      box-shadow: 0 0 0 0.2rem rgba($wfp-primary, 0.2);
+    }
+  }
+
+  .selectize-dropdown {
+    background-color: $wfp-dark-bg-elevated;
+    border-color: $wfp-dark-border;
+    color: $wfp-dark-text-secondary;
+
+    .option:hover {
+      background-color: $wfp-dark-bg-surface;
+      color: $wfp-dark-text-primary;
+    }
+
+    .active {
+      background-color: $wfp-primary;
+      color: $wfp-white;
+    }
+  }
+
+  // DT/datatables
+  .dataTables_wrapper {
+    .dataTables_length,
+    .dataTables_filter,
+    .dataTables_info,
+    .dataTables_processing,
+    .dataTables_paginate {
+      color: $wfp-dark-text-secondary;
+    }
+
+    .dataTables_paginate {
+      .paginate_button {
+        color: $wfp-dark-text-secondary !important;
+
+        &:hover {
+          background: $wfp-dark-bg-surface;
+          border-color: $wfp-dark-border;
+          color: $wfp-dark-text-primary !important;
+        }
+
+        &.current {
+          background: $wfp-primary;
+          border-color: $wfp-primary;
+          color: $wfp-white !important;
+        }
+      }
+    }
+  }
+
+  table.dataTable {
+    border-color: $wfp-dark-border;
+
+    thead th {
+      border-bottom-color: $wfp-dark-border;
+    }
+
+    tbody td {
+      border-color: $wfp-dark-border-subtle;
+    }
+  }
+}
+
+// ============================================================================
+// DARK MODE: Print (keep dark mode in print if explicitly set)
+// ============================================================================
+
+@media print {
+  [data-bs-theme="dark"] {
+    body {
+      background-color: $wfp-white !important;
+      color: $wfp-dark-text-01 !important;
+    }
+
+    .card, .modal-content, .dropdown-menu, .popover, .toast, .offcanvas {
+      background-color: $wfp-white !important;
+      border-color: #ccc !important;
+    }
+  }
+}

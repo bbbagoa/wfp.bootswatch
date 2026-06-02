@@ -1,0 +1,87 @@
+// ============================================================================
+// WFP Color Palette
+// ============================================================================
+// Based on the World Food Programme UI Kit Design System
+// https://designsystem.wfp.org/
+//
+// The WFP color palette follows the organizational brand guidelines with
+// primary blue (#007dbc) as the dominant color for actions and key elements.
+// The palette supports both light and dark UI modes.
+// ============================================================================
+
+// --- Brand Colors ---
+$wfp-blue:        #007dbc !default;
+$wfp-blue-51:     #0085c6 !default;
+$wfp-blue-dark:   #006193 !default;
+$wfp-blue-light:  #3399cc !default;
+
+$wfp-navy:        #19486a !default;
+$wfp-navy-light:  #2a5f85 !default;
+$wfp-navy-dark:   #0f334d !default;
+
+// --- Accent Colors ---
+$wfp-aqua:        #26bde2 !default;
+$wfp-aqua-light:  #52ccea !default;
+$wfp-aqua-dark:   #1a9ac0 !default;
+
+$wfp-dark-green:  #336d37 !default;
+$wfp-dark-green-light: #4a8a4f !default;
+$wfp-dark-green-dark:  #265129 !default;
+
+$wfp-lime:        #8ad220 !default;
+$wfp-lime-light:  #a3e04f !default;
+$wfp-lime-dark:   #6fad18 !default;
+
+$wfp-yellow:      #f7b825 !default;
+$wfp-yellow-light:#f9cc5c !default;
+$wfp-yellow-dark: #d99e1c !default;
+
+$wfp-ochre:       #d29536 !default;
+$wfp-ochre-light: #e0af5e !default;
+$wfp-ochre-dark:  #b07a2a !default;
+
+$wfp-orange:      #fd6925 !default;
+$wfp-orange-light:#fd8f5c !default;
+$wfp-orange-dark: #e05518 !default;
+
+$wfp-red:         #c5192d !default;
+$wfp-red-light:   #e04a5c !default;
+$wfp-red-dark:    #9e1323 !default;
+
+$wfp-dark-red:    #8d0b33 !default;
+$wfp-magenta:     #dd1367 !default;
+
+// --- Neutral Colors ---
+$wfp-white:       #ffffff !default;
+$wfp-gray-1:      #dfe3e6 !default;
+$wfp-gray-2:      #f0f3f6 !default;
+$wfp-gray-3:      #f5f7fa !default;
+
+// --- Text Colors ---
+$wfp-dark-text-01:  #031c2d !default;
+$wfp-dark-text-02:  #415058 !default;
+$wfp-dark-text-03:  #6f787c !default;
+
+$wfp-light-text-01: #ffffff !default;
+$wfp-light-text-02: #e3e7e8 !default;
+$wfp-light-text-03: #b8bfc3 !default;
+
+// --- Semantic Mapping ---
+// These map WFP colors to Bootstrap semantic roles
+$wfp-primary:     $wfp-blue !default;
+$wfp-secondary:   $wfp-navy !default;
+$wfp-success:     $wfp-dark-green !default;
+$wfp-info:        $wfp-aqua !default;
+$wfp-warning:     $wfp-yellow !default;
+$wfp-danger:      $wfp-red !default;
+$wfp-light:       $wfp-gray-3 !default;
+$wfp-dark:        $wfp-dark-text-01 !default;
+
+// --- Background Colors ---
+$wfp-bg-primary:    $wfp-white !default;
+$wfp-bg-secondary:  $wfp-gray-3 !default;
+$wfp-bg-tertiary:   $wfp-gray-2 !default;
+
+// --- Border Colors ---
+$wfp-border-color:  $wfp-gray-1 !default;
+$wfp-border-subtle: $wfp-gray-2 !default;

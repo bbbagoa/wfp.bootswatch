@@ -1,0 +1,31 @@
+// ============================================================================
+// WFP Bootswatch Theme
+// ============================================================================
+// Main entry point for the WFP (World Food Programme) Bootswatch theme.
+// This file imports all theme partials in the correct order.
+//
+// Based on the WFP UI Kit Design System:
+// https://designsystem.wfp.org/
+//
+// Usage:
+//   This SCSS is automatically included when using wfp_theme() in R.
+//   Manual compilation requires Bootstrap 5 SCSS sources.
+// ============================================================================
+
+// Import WFP color definitions (must come first)
+@import "wfp-colors";
+
+// Import WFP Bootstrap variable overrides
+@import "wfp-variables";
+
+// Import WFP typography styles
+@import "wfp-typography";
+
+// Import WFP component styles
+@import "wfp-components";
+
+// Import WFP custom utilities and additional styles
+@import "wfp-custom";
+
+// Import WFP dark mode styles
+@import "wfp-dark-mode";

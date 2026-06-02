@@ -1,0 +1,272 @@
+// ============================================================================
+// WFP Bootstrap Variable Overrides
+// ============================================================================
+// Overrides Bootstrap 5 default variables with WFP design tokens.
+// These variables are applied before Bootstrap's defaults.
+// ============================================================================
+
+// --- Color System ---
+$primary:       $wfp-primary !default;
+$secondary:     $wfp-secondary !default;
+$success:       $wfp-success !default;
+$info:          $wfp-info !default;
+$warning:       $wfp-warning !default;
+$danger:        $wfp-danger !default;
+$light:         $wfp-light !default;
+$dark:          $wfp-dark !default;
+
+// --- Theme Colors Extended ---
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark,
+  "wfp-blue":   $wfp-blue,
+  "wfp-navy":   $wfp-navy,
+  "wfp-aqua":   $wfp-aqua,
+  "wfp-green":  $wfp-dark-green,
+  "wfp-lime":   $wfp-lime,
+  "wfp-yellow": $wfp-yellow,
+  "wfp-ochre":  $wfp-ochre,
+  "wfp-orange": $wfp-orange,
+  "wfp-red":    $wfp-red
+) !default;
+
+// --- Body ---
+$body-color:    $wfp-dark-text-01 !default;
+$body-bg:       $wfp-white !default;
+$body-text-align: null !default;
+
+// --- Typography ---
+// Open Sans is WFP's primary typeface for Latin characters.
+// Noto Sans serves as the fallback for non-Latin scripts.
+$font-family-sans-serif:  "Open Sans", "Noto Sans", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace:   "Source Code Pro", SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:        $font-family-sans-serif !default;
+$font-family-code:        $font-family-monospace !default;
+
+$font-size-root:          null !default;
+$font-size-base:          1rem !default;
+$font-size-sm:            $font-size-base * 0.875 !default;
+$font-size-lg:            $font-size-base * 1.125 !default;
+
+$font-weight-lighter:     200 !default;
+$font-weight-light:       300 !default;
+$font-weight-normal:      400 !default;
+$font-weight-medium:      500 !default;
+$font-weight-semibold:    600 !default;
+$font-weight-bold:        700 !default;
+$font-weight-bolder:      800 !default;
+
+$font-weight-base:        $font-weight-normal !default;
+$line-height-base:        1.5 !default;
+$line-height-sm:          1.25 !default;
+$line-height-lg:          2 !default;
+
+$h1-font-size:            $font-size-base * 2.5 !default;
+$h2-font-size:            $font-size-base * 2 !default;
+$h3-font-size:            $font-size-base * 1.75 !default;
+$h4-font-size:            $font-size-base * 1.5 !default;
+$h5-font-size:            $font-size-base * 1.25 !default;
+$h6-font-size:            $font-size-base !default;
+
+$headings-margin-bottom:  0.5rem !default;
+$headings-font-family:    null !default;
+$headings-font-style:     null !default;
+$headings-font-weight:    600 !default;
+$headings-line-height:    1.2 !default;
+$headings-color:          null !default;
+
+// --- Spacing ---
+// WFP uses an 8pt grid system
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,   // 4px
+  2: $spacer * 0.5,    // 8px
+  3: $spacer * 0.75,   // 12px
+  4: $spacer * 1,      // 16px
+  5: $spacer * 1.5,    // 24px
+  6: $spacer * 2,      // 32px
+  7: $spacer * 3,      // 48px
+  8: $spacer * 4,      // 64px
+  9: $spacer * 6,      // 96px
+  10: $spacer * 8      // 128px
+) !default;
+
+// --- Border Radius ---
+// WFP uses subtle rounding consistent with their clean design aesthetic
+$border-radius:           0.25rem !default;
+$border-radius-sm:        0.2rem !default;
+$border-radius-lg:        0.3rem !default;
+$border-radius-xl:        0.5rem !default;
+$border-radius-xxl:       1rem !default;
+$border-radius-pill:      50rem !default;
+
+// --- Borders ---
+$border-width:            1px !default;
+$border-color:            $wfp-gray-1 !default;
+
+// --- Box Shadow ---
+// WFP follows a Material Design flat approach - minimal shadows
+$box-shadow:              none !default;
+$box-shadow-sm:           0 0.125rem 0.25rem rgba($wfp-dark-text-01, 0.075) !default;
+$box-shadow-lg:           0 0.5rem 1rem rgba($wfp-dark-text-01, 0.1) !default;
+
+// --- Component: Buttons ---
+$btn-font-weight:         $font-weight-semibold !default;
+$btn-padding-y:           0.5rem !default;
+$btn-padding-x:           1rem !default;
+$btn-padding-y-sm:        0.25rem !default;
+$btn-padding-x-sm:        0.75rem !default;
+$btn-padding-y-lg:        0.75rem !default;
+$btn-padding-x-lg:        1.5rem !default;
+$btn-border-radius:       $border-radius !default;
+$btn-border-radius-sm:    $border-radius-sm !default;
+$btn-border-radius-lg:    $border-radius-lg !default;
+$btn-focus-width:         0.2rem !default;
+$btn-focus-opacity:       0.25 !default;
+
+// --- Component: Forms ---
+$input-padding-y:         0.5rem !default;
+$input-padding-x:         0.75rem !default;
+$input-bg:                $wfp-white !default;
+$input-border-color:      $wfp-gray-1 !default;
+$input-border-radius:     $border-radius !default;
+$input-focus-border-color:tint-color($primary, 50%) !default;
+$input-focus-box-shadow:  0 0 0 0.2rem rgba($primary, 0.25) !default;
+$input-placeholder-color: $wfp-dark-text-03 !default;
+$form-label-font-weight:  $font-weight-medium !default;
+$form-label-color:        $wfp-dark-text-02 !default;
+
+// --- Component: Navbar ---
+$navbar-padding-y:        0.75rem !default;
+$navbar-padding-x:        1rem !default;
+$navbar-dark-color:       rgba($wfp-white, 0.85) !default;
+$navbar-dark-hover-color: $wfp-white !default;
+$navbar-dark-active-color:$wfp-white !default;
+$navbar-light-color:      $wfp-dark-text-02 !default;
+$navbar-light-hover-color:$wfp-dark-text-01 !default;
+$navbar-light-active-color: $primary !default;
+
+// --- Component: Cards ---
+$card-border-color:       $wfp-gray-1 !default;
+$card-border-radius:      $border-radius-lg !default;
+$card-spacer-y:           1.25rem !default;
+$card-spacer-x:           1.25rem !default;
+$card-cap-bg:             $wfp-gray-3 !default;
+$card-cap-padding-y:      0.75rem !default;
+$card-cap-padding-x:      1.25rem !default;
+$card-bg:                 $wfp-white !default;
+
+// --- Component: Alerts ---
+$alert-border-radius:     $border-radius !default;
+$alert-padding-y:         0.875rem !default;
+$alert-padding-x:         1.25rem !default;
+$alert-margin-bottom:     1rem !default;
+$alert-border-width:      $border-width !default;
+
+// --- Component: Badges ---
+$badge-font-size:         0.75em !default;
+$badge-font-weight:       $font-weight-semibold !default;
+$badge-color:             $wfp-white !default;
+$badge-padding-y:         0.35em !default;
+$badge-padding-x:         0.65em !default;
+$badge-border-radius:     $border-radius-sm !default;
+
+// --- Component: Dropdowns ---
+$dropdown-border-color:   $wfp-gray-1 !default;
+$dropdown-border-radius:  $border-radius-lg !default;
+$dropdown-link-hover-bg:  $wfp-gray-3 !default;
+$dropdown-link-active-bg: $primary !default;
+$dropdown-padding-y:      0.5rem !default;
+
+// --- Component: Modals ---
+$modal-content-border-color:    $wfp-gray-1 !default;
+$modal-content-border-radius:   $border-radius-lg !default;
+$modal-backdrop-bg:             $wfp-dark-text-01 !default;
+$modal-backdrop-opacity:        0.5 !default;
+
+// --- Component: Pagination ---
+$pagination-color:                $primary !default;
+$pagination-hover-color:          $wfp-blue-dark !default;
+$pagination-hover-bg:             $wfp-gray-3 !default;
+$pagination-active-bg:            $primary !default;
+$pagination-active-border-color:  $primary !default;
+
+// --- Component: Progress ---
+$progress-height:             0.75rem !default;
+$progress-border-radius:      $border-radius-pill !default;
+$progress-bg:                 $wfp-gray-2 !default;
+$progress-bar-bg:             $primary !default;
+
+// --- Component: Tables ---
+$table-cell-padding-y:        0.75rem !default;
+$table-cell-padding-x:        0.75rem !default;
+$table-cell-padding-y-sm:     0.5rem !default;
+$table-cell-padding-x-sm:     0.5rem !default;
+$table-border-color:          $wfp-gray-1 !default;
+$table-striped-bg:            $wfp-gray-3 !default;
+$table-hover-bg:              rgba($primary, 0.04) !default;
+$table-active-bg:             rgba($primary, 0.08) !default;
+
+// --- Component: Tabs ---
+$nav-tabs-border-color:       $wfp-gray-1 !default;
+$nav-tabs-link-hover-border-color: $wfp-gray-2 !default;
+$nav-tabs-link-active-color:  $primary !default;
+$nav-tabs-link-active-bg:     $wfp-white !default;
+$nav-tabs-link-active-border-color: $wfp-gray-1 $wfp-gray-1 $nav-tabs-link-active-bg !default;
+
+// --- Component: Tooltips ---
+$tooltip-border-radius:       $border-radius-sm !default;
+
+// --- Component: Popovers ---
+$popover-border-color:        $wfp-gray-1 !default;
+$popover-border-radius:       $border-radius-lg !default;
+$popover-header-bg:           $wfp-gray-3 !default;
+
+// --- Component: List Group ---
+$list-group-border-color:     $wfp-gray-1 !default;
+$list-group-hover-bg:         $wfp-gray-3 !default;
+$list-group-active-bg:        $primary !default;
+$list-group-active-border-color: $primary !default;
+
+// --- Component: Accordions ---
+$accordion-border-color:      $wfp-gray-1 !default;
+$accordion-border-radius:     $border-radius !default;
+$accordion-button-active-bg:  rgba($primary, 0.04) !default;
+$accordion-button-active-color: $primary !default;
+
+// --- Z-index ---
+$zindex-dropdown:             1000 !default;
+$zindex-sticky:               1020 !default;
+$zindex-fixed:                1030 !default;
+$zindex-offcanvas-backdrop:   1040 !default;
+$zindex-offcanvas:            1045 !default;
+$zindex-modal-backdrop:       1050 !default;
+$zindex-modal:                1055 !default;
+$zindex-popover:              1070 !default;
+$zindex-tooltip:              1080 !default;
+
+// --- Grid Breakpoints ---
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+) !default;
+
+// --- Container Max Widths ---
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+) !default;
